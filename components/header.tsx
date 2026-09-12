@@ -1,14 +1,22 @@
 import { SignInButton, SignUpButton, Show, UserButton } from "@clerk/nextjs";
+import { Link2 } from "lucide-react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 
 export function Header() {
   return (
-    <header className="w-full border-b border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
+    <header className="relative z-10 w-full border-b border-zinc-800/80 bg-[#09090b]">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <div className="text-2xl font-bold text-zinc-900 dark:text-white">
-          Link Shortener
-        </div>
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-lg font-semibold tracking-tight text-white"
+        >
+          <span className="flex size-8 items-center justify-center rounded-lg bg-indigo-500 text-white">
+            <Link2 className="size-4" />
+          </span>
+          LinkShortener
+        </Link>
         <div className="flex items-center gap-4">
           <Show when="signed-out">
             <SignInButton mode="modal">
