@@ -1,6 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
+import { CreateLinkDialog } from "@/components/create-link/create-link-dialog";
 import { getLinksForUser } from "@/data/links";
 
 export default async function DashboardPage() {
@@ -15,7 +16,8 @@ export default async function DashboardPage() {
   return (
     <div className="flex flex-1 flex-col">
       <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-12">
-        <div className="mb-8">
+        <div className="mb-8 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <div>
           <p className="text-sm font-medium text-indigo-400">Your workspace</p>
           <h1 className="mt-2 text-3xl font-semibold tracking-tight text-white">
             Your links
@@ -24,6 +26,8 @@ export default async function DashboardPage() {
             Manage the short links you have created.
           </p>
         </div>
+        <CreateLinkDialog />
+      </div>
 
         {userLinks.length === 0 ? (
           <div className="rounded-xl border border-dashed border-zinc-700 bg-zinc-900/50 px-6 py-12 text-center">
