@@ -1,3 +1,7 @@
+---
+description: Read this before implementing or modifying authentication in the project.
+---
+
 # Authentication Guide
 
 This project uses **Clerk** for all authentication. NO OTHER AUTH METHODS should be used.

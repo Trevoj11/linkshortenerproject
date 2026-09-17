@@ -1,3 +1,7 @@
+---
+description: Read this before implementing or modifying UI components in the project.
+---
+
 # shadcn/ui Component Guide
 
 This project uses **shadcn/ui exclusively** for all UI elements. NO CUSTOM COMPONENTS should be created.
