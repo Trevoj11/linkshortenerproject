@@ -60,3 +60,13 @@ export async function getLinksForUser(userId: string) {
 		.where(eq(links.userId, userId))
 		.orderBy(desc(links.updatedAt));
 }
+
+export async function getLinkByShortCode(shortCode: string) {
+	const [link] = await db
+		.select()
+		.from(links)
+		.where(eq(links.shortCode, shortCode))
+		.limit(1);
+
+	return link;
+}
